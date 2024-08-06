@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: #0B0909;
+}
+
+body {
+    margin: 0;
+    font-family:Poppins, Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.blinking-cursor {
+    @apply font-light text-lg text-grey;
+    animation: blink 1s step-end infinite;
+}
