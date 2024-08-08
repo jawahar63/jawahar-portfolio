@@ -14,5 +14,7 @@ export class SidenavbarComponent {
   setActiveSection(section: string) {
     this.activeSection = section;
   }
-
+  changesidebar(){
+    
+  }
 }
