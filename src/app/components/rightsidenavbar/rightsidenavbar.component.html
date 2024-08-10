@@ -1,28 +1,32 @@
-<div *ngIf="active" class="px-1 md:px-0 h-[100vh] w-[40px] md:w-[60px] bg-darkblue md:bg-black flex justify-center items-center animate-fadeLeft animate-delay-0">
-    <div class="md:w-[60px] bg-blue rounded-e-3xl">
-        <div class="block md:hidden absolute z-10 top-0 right-0 me-2 mt-2 p-1 w-[30px] h-[30px] rounded-full bg-lightblue bg-opacity-15 "(click)="changesidebar()" >
+<div class="h-[100vh] w-[40px] md:w-[60px] bg-darkblue md:bg-black flex justify-center items-center">
+    <div class=" bg-blue rounded-s-3xl">
+        <div class="block md:hidden absolute z-10 top-0 right-0 ms-2 mt-2 pt-1 w-[30px] h-[30px] rounded-full bg-lightblue bg-opacity-15 "
+            (click)="changesidebar()">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8 6L14 12L8 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16 6L10 12L16 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
         </div>
         <div
-            class="bg-blue h-[100vh] md:h-[90vh] md:w-[40px] md:ms-[20px] rounded-e-3xl flex flex-col justify-center items-center gap-2 transition-all duration-300 ease-in-out">
+            class="bg-blue h-[100vh] md:h-[90vh] md:w-[40px] md:ms-[20px] rounded-s-3xl flex flex-col justify-center items-center gap-2 transition-all duration-300 ease-in-out">
             <div class="h-1/6 w-auto flex justify-center items-center">
                 <div *ngIf="activeSection==='home'"
                     class="flex flex-col cursor-pointer transition-opacity duration-300 ease-in-out opacity-100">
                     <div class="relative mb-2.5">
-                        <div class="absolute top-0 right-0 md:left-0  bg-darkblue w-[10px] h-[10px]"></div>
-                        <div class="absolute top-0 right-0 md:left-0  bg-blue rounded-br-xl md:rounded-bl-xl md:rounded-br-none w-[10px] h-[10px]"></div>
+                        <div class="absolute top-0 left-0 bg-darkblue w-[10px] h-[10px]"></div>
+                        <div class="absolute top-0 left-0 bg-blue rounded-bl-xl w-[10px] h-[10px]"></div>
                     </div>
-                    <div class="h-[100px] w-[40px] bg-darkblue flex items-center justify-center rounded-s-2xl md:rounded-e-2xl md:rounded-s-none shadow-md">
-                        <h3 class="rotate-[-90deg] text-center text-beach font-poppins text-sm md:text-lg tracking-widest">HOME</h3>
+                    <div
+                        class="h-[100px] w-[40px] bg-darkblue flex items-center justify-center rounded-e-2xl shadow-md">
+                        <h3
+                            class="rotate-[-90deg] text-center text-beach font-poppins text-sm md:text-lg tracking-widest">
+                            HOME</h3>
                     </div>
                     <div class="relative">
-                        <div class="absolute right-0 md:left-0 bg-darkblue w-[10px] h-[10px]"></div>
-                        <div class="absolute right-0 md:left-0 bg-blue rounded-tr-xl md:rounded-tl-xl md:rounded-tr-none w-[10px] h-[10px]"></div>
+                        <div class="absolute bg-darkblue w-[10px] h-[10px]"></div>
+                        <div class="absolute bg-blue rounded-tl-xl w-[10px] h-[10px]"></div>
                     </div>
                 </div>
-        
+
                 <div *ngIf="activeSection!=='home'" (click)="setActiveSection('home')"
                     class="flex flex-col cursor-pointer transition-opacity duration-300 ease-in-out opacity-50 hover:opacity-100">
                     <div class="relative mb-2.5">
@@ -30,7 +34,9 @@
                         <div class="absolute top-0 left-0 w-[10px] h-[10px]"></div>
                     </div>
                     <div class="h-[100px] w-[40px] bg-blue flex items-center justify-center rounded-e-2xl">
-                        <h3 class="rotate-[-90deg] text-center text-lightblue font-poppins text-sm md:text-lg tracking-widest">HOME</h3>
+                        <h3
+                            class="rotate-[-90deg] text-center text-lightblue font-poppins text-sm md:text-lg tracking-widest">
+                            HOME</h3>
                     </div>
                     <div class="relative">
                         <div class="absolute w-[10px] h-[10px]"></div>
@@ -38,21 +44,24 @@
                     </div>
                 </div>
             </div>
-        
+
             <div class="my-3 w-[20px] h-[5px] bg-lightblue rounded-full shadow-md"></div>
             <div class="h-1/6 w-auto flex justify-center items-center">
                 <div *ngIf="activeSection==='skill'"
                     class="flex flex-col cursor-pointer transition-opacity duration-300 ease-in-out opacity-100">
                     <div class="relative mb-2.5">
-                        <div class="absolute top-0 right-0 md:left-0  bg-darkblue w-[10px] h-[10px]"></div>
-                        <div class="absolute top-0 right-0 md:left-0  bg-blue rounded-br-xl md:rounded-bl-xl md:rounded-br-none w-[10px] h-[10px]"></div>
+                        <div class="absolute top-0 left-0 bg-darkblue w-[10px] h-[10px]"></div>
+                        <div class="absolute top-0 left-0 bg-blue rounded-bl-xl w-[10px] h-[10px]"></div>
                     </div>
-                    <div class="h-[100px] w-[40px] bg-darkblue flex items-center justify-center rounded-s-2xl md:rounded-e-2xl md:rounded-s-none shadow-md">
-                        <h3 class="rotate-[-90deg] text-center text-beach font-poppins text-sm md:text-lg tracking-widest">SKILL</h3>
+                    <div
+                        class="h-[100px] w-[40px] bg-darkblue flex items-center justify-center rounded-e-2xl shadow-md">
+                        <h3
+                            class="rotate-[-90deg] text-center text-beach font-poppins text-sm md:text-lg tracking-widest">
+                            SKILL</h3>
                     </div>
                     <div class="relative">
-                        <div class="absolute right-0 md:left-0 bg-darkblue w-[10px] h-[10px]"></div>
-                        <div class="absolute right-0 md:left-0 bg-blue rounded-tr-xl md:rounded-tl-xl md:rounded-tr-none w-[10px] h-[10px]"></div>
+                        <div class="absolute bg-darkblue w-[10px] h-[10px]"></div>
+                        <div class="absolute bg-blue rounded-tl-xl w-[10px] h-[10px]"></div>
                     </div>
                 </div>
                 <div *ngIf="activeSection!=='skill'" (click)="setActiveSection('skill')"
@@ -62,7 +71,9 @@
                         <div class="absolute top-0 left-0 w-[10px] h-[10px]"></div>
                     </div>
                     <div class="h-[100px] w-[40px] bg-blue flex items-center justify-center rounded-e-2xl">
-                        <h3 class="rotate-[-90deg] text-center text-lightblue font-poppins text-sm md:text-lg tracking-widest">SKILL</h3>
+                        <h3
+                            class="rotate-[-90deg] text-center text-lightblue font-poppins text-sm md:text-lg tracking-widest">
+                            SKILL</h3>
                     </div>
                     <div class="relative">
                         <div class="absolute w-[10px] h-[10px]"></div>
@@ -75,15 +86,18 @@
                 <div *ngIf="activeSection==='project'"
                     class="flex flex-col cursor-pointer transition-opacity duration-300 ease-in-out opacity-100">
                     <div class="relative mb-2.5">
-                        <div class="absolute top-0 right-0 md:left-0  bg-darkblue w-[10px] h-[10px]"></div>
-                        <div class="absolute top-0 right-0 md:left-0  bg-blue rounded-br-xl md:rounded-bl-xl md:rounded-br-none w-[10px] h-[10px]"></div>
+                        <div class="absolute top-0 left-0 bg-darkblue w-[10px] h-[10px]"></div>
+                        <div class="absolute top-0 left-0 bg-blue rounded-bl-xl w-[10px] h-[10px]"></div>
                     </div>
-                    <div class="h-[100px] w-[40px] md:h-[120px] bg-darkblue flex items-center justify-center rounded-s-2xl md:rounded-e-2xl md:rounded-s-none shadow-md">
-                        <h3 class="rotate-[-90deg] text-center text-beach font-poppins text-sm md:text-lg tracking-widest">PROJECT</h3>
+                    <div
+                        class="h-[100px] w-[40px] md:h-[120px] bg-darkblue flex items-center justify-center rounded-e-2xl shadow-md">
+                        <h3
+                            class="rotate-[-90deg] text-center text-beach font-poppins text-sm md:text-lg tracking-widest">
+                            PROJECT</h3>
                     </div>
                     <div class="relative">
-                        <div class="absolute right-0 md:left-0 bg-darkblue w-[10px] h-[10px]"></div>
-                        <div class="absolute right-0 md:left-0 bg-blue rounded-tr-xl md:rounded-tl-xl md:rounded-tr-none w-[10px] h-[10px]"></div>
+                        <div class="absolute bg-darkblue w-[10px] h-[10px]"></div>
+                        <div class="absolute bg-blue rounded-tl-xl w-[10px] h-[10px]"></div>
                     </div>
                 </div>
                 <div *ngIf="activeSection!=='project'" (click)="setActiveSection('project')"
@@ -93,7 +107,9 @@
                         <div class="absolute top-0 left-0 w-[10px] h-[10px]"></div>
                     </div>
                     <div class="h-[100px] w-[40px] bg-blue flex items-center justify-center rounded-e-2xl">
-                        <h3 class="rotate-[-90deg] text-center text-lightblue font-poppins text-sm md:text-lg tracking-widest">PROJECT</h3>
+                        <h3
+                            class="rotate-[-90deg] text-center text-lightblue font-poppins text-sm md:text-lg tracking-widest">
+                            PROJECT</h3>
                     </div>
                     <div class="relative">
                         <div class="absolute w-[10px] h-[10px]"></div>
@@ -106,15 +122,18 @@
                 <div *ngIf="activeSection==='contact'"
                     class="flex flex-col cursor-pointer transition-opacity duration-300 ease-in-out opacity-100">
                     <div class="relative mb-2.5">
-                        <div class="absolute top-0 right-0 md:left-0  bg-darkblue w-[10px] h-[10px]"></div>
-                        <div class="absolute top-0 right-0 md:left-0  bg-blue rounded-br-xl md:rounded-bl-xl md:rounded-br-none w-[10px] h-[10px]"></div>
+                        <div class="absolute top-0 left-0 bg-darkblue w-[10px] h-[10px]"></div>
+                        <div class="absolute top-0 left-0 bg-blue rounded-bl-xl w-[10px] h-[10px]"></div>
                     </div>
-                    <div class="h-[100px] w-[40px] md:h-[120px] bg-darkblue flex items-center justify-center rounded-s-2xl md:rounded-e-2xl md:rounded-s-none shadow-md">
-                        <h3 class="rotate-[-90deg] text-center text-beach font-poppins text-sm md:text-lg tracking-widest">CONTACT</h3>
+                    <div
+                        class="h-[100px] w-[40px] md:h-[120px] bg-darkblue flex items-center justify-center rounded-e-2xl shadow-md">
+                        <h3
+                            class="rotate-[-90deg] text-center text-beach font-poppins text-sm md:text-lg tracking-widest">
+                            CONTACT</h3>
                     </div>
                     <div class="relative">
-                        <div class="absolute right-0 md:left-0 bg-darkblue w-[10px] h-[10px]"></div>
-                        <div class="absolute right-0 md:left-0 bg-blue rounded-tr-xl md:rounded-tl-xl md:rounded-tr-none w-[10px] h-[10px]"></div>
+                        <div class="absolute bg-darkblue w-[10px] h-[10px]"></div>
+                        <div class="absolute bg-blue rounded-tl-xl w-[10px] h-[10px]"></div>
                     </div>
                 </div>
                 <div *ngIf="activeSection!=='contact'" (click)="setActiveSection('contact')"
@@ -124,7 +143,9 @@
                         <div class="absolute top-0 left-0 w-[10px] h-[10px]"></div>
                     </div>
                     <div class="h-[100px] w-[40px] bg-blue flex items-center justify-center rounded-e-2xl">
-                        <h3 class="rotate-[-90deg] text-center text-lightblue font-poppins text-sm md:text-lg tracking-widest">CONTACT</h3>
+                        <h3
+                            class="rotate-[-90deg] text-center text-lightblue font-poppins text-sm md:text-lg tracking-widest">
+                            CONTACT</h3>
                     </div>
                     <div class="relative">
                         <div class="absolute w-[10px] h-[10px]"></div>

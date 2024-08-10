@@ -1,18 +1,18 @@
-import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { AllserviceService } from '../../services/allservice.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-sidenavbar',
+  selector: 'app-rightsidenavbar',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './sidenavbar.component.html',
-  styleUrls: ['./sidenavbar.component.css']
+  templateUrl: './rightsidenavbar.component.html',
+  styleUrls: ['./rightsidenavbar.component.css']
 })
-export class SidenavbarComponent implements OnInit {
+export class RightsidenavbarComponent implements OnInit {
   allservice = inject(AllserviceService);
-  activeSection: string = 'home'; // Default active section
-  active: boolean = true;
+  activeSection: string = 'home';
+  active: boolean = false;
 
   ngOnInit(): void {
     this.active = this.allservice.sidebar;

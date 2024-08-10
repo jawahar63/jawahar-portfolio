@@ -50,10 +50,10 @@ body {
 
 @layer components{
     .skill-field {
-            @apply w-full flex flex-col px-[3vh] gap-[2vh] lg:gap-[0.5vh]
+            @apply w-full flex flex-col px-[3vh] gap-[2.5vh] lg:gap-[0.4vh]
     }
     .skill-field-text {
-            @apply w-full font-poppins text-start font-normal text-beach text-xs md:text-base lg:text-xl tracking-wider
+            @apply w-full font-poppins text-start font-normal text-beach text-sm md:text-base lg:text-base tracking-wider
     }
     .skill-field-grid {
             @apply w-full grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-[1vh]

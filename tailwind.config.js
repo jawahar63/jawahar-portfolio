@@ -27,11 +27,16 @@ module.exports = {
         fadeLeft:{
           '0%': { opacity: '0', transform: 'translateX(-40px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
-        }
+        },
+        fadeInRight: {
+          '0%': { opacity: 0, transform: 'translateX(40px)' },
+          '100%': { opacity: 1, transform: 'translateX(0)' },
+        },
       },
       animation: {
         blink: 'blink 1s step-end infinite',
-        fadeLeft: 'fadeLeft 1s ease-in-out',
+        fadeLeft: 'fadeLeft 0.5s ease-in-out',
+        fadeInRight: 'fadeInRight 0.5s ease-in-out forwards',
       },
   },
   plugins: [
