@@ -16,10 +16,16 @@ export class RightsidenavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.active = this.allservice.sidebar;
+    this.allservice.currPage.subscribe((val:string)=>{
+      console.log(val);
+      this.activeSection=val;
+    })
   }
+
 
   setActiveSection(section: string) {
     this.activeSection = section;
+    this.allservice.currPage.next(section);
   }
 
   changesidebar() {

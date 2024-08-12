@@ -1,15 +1,29 @@
 <div class="flex flex-row bg-darkblue md:bg-black">
   <div *ngIf="sideactive" class="flex flex-row md:mx-[2%] transition-all duration-300 ease-in-out fixed">
-    <app-sidedetails [ngClass]="{'animate-fadeLeft animate-delay-0':sideactive}" class="hidden md:block md:z-10 transition-all duration-300 ease-in-out"></app-sidedetails>
+    <app-sidedetails [ngClass]="{'animate-fadeLeft animate-delay-0': sideactive}"
+      class="hidden md:block md:z-10 transition-all duration-300 ease-in-out"></app-sidedetails>
     <app-sidenavbar class="md:ms-[-21px]"></app-sidenavbar>
   </div>
-  <div [ngClass]="{'ml-auto': sideactive, 'ml-[4vw] ': !sideactive}" class="transition-all duration-600 ease-in-out">
-    <app-home></app-home>
-    <app-skill></app-skill>
-    <app-contact/>
+  <div [ngClass]="{'ml-auto': sideactive, 'ml-[4vw]': !sideactive}" class="transition-all duration-600 ease-in-out">
+
+    <section id="home" class="section">
+      <app-home></app-home>
+    </section>
+
+    <section id="skill" class="section">
+      <app-skill></app-skill>
+    </section>
+
+    <section id="project" class="section">
+      <app-project></app-project>
+    </section>
+
+    <section id="contact" class="section">
+      <app-contact></app-contact>
+    </section>
   </div>
   <div *ngIf="!sideactive" class="fixed right-0 top-0">
-      <app-rightsidenavbar [ngClass]="{'animate-fadeInRight animate-delay-0': !sideactive}"
-      class="block md:hidden transition-all duration-300 ease-in-out animate-fadeRight" />
+    <app-rightsidenavbar [ngClass]="{'animate-fadeInRight animate-delay-0': !sideactive}"
+      class="block md:hidden transition-all duration-300 ease-in-out animate-fadeRight"></app-rightsidenavbar>
   </div>
 </div>

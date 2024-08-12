@@ -1,6 +1,6 @@
 <div class="first-bg">
     <div class="second-bg">
-        <div class="third-bg rounded-b-3xl mb-[0.5vh]">
+        <div class="third-bg rounded-b-3xl ">
             <h2 class="h1-text">Contact</h2>
             <div class="ps-[6vw] md:ps-[4vw] lg:px-[2vw]">
                 <div>
@@ -13,7 +13,7 @@
                 </div>
                 <div>
                     <form #contactFormElement="ngForm" [formGroup]="contactForm" (ngSubmit)="sendEmail($event)"
-                        class="p-[3vw] pe-[9vw] md:pe-[7vw] lg:p-[2vw] grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        class="ps-[3vw] pe-[9vw] md:pe-[7vw] lg:ps-[2vw] pt-[1vh] grid grid-cols-1 lg:grid-cols-2 gap-4">
                         <div class="relative flex flex-col space-y-2">
                             <input type="text" formControlName="user_name" placeholder="Your Name" class="inputs" />
                             <div *ngIf="contactForm.get('user_name')?.invalid && (contactForm.get('user_name')?.touched)"
@@ -38,7 +38,7 @@
                         </div>
                         <div class="flex justify-center lg:col-span-2">
                             <button type="submit" [disabled]="contactForm.invalid"
-                                class="w-full lg:w-[300px] px-4 py-2 bg-beach text-center text-black rounded-md hover:bg-black hover:text-beach border border-beach disabled:bg-opacity-90 cursor-pointer transition-all duration-300 ease-in-out"
+                                class="w-full lg:w-[300px] px-4 py-2 bg-beach text-center text-black rounded-md hover:bg-black hover:text-beach border border-beach disabled:bg-opacity-90 transition-all duration-300 ease-in-out"
                                 style="box-shadow: 0 0 10px 2px rgba(255, 204, 0, 0);"
                                 onmouseover="this.style.boxShadow='0 0 10px 2px rgba(255, 204, 0, 0.25)';"
                                 onmouseout="this.style.boxShadow='0 0 10px 2px rgba(255, 204, 0, 0)';">
@@ -50,7 +50,7 @@
 
                 </div>
                 <div>
-                    <p class="h2-text mt-[1vh] lg:mt-[0.5vh]">Location</p>
+                    <p class="h2-text mt-[1vh] lg:mt-[0.3vh]">Location</p>
                     <div class="ps-[2vw] pt-[1vh] pe-[8vw] md:pe-[7vw] lg:pe-[4vw] rounded-lg lg:flex lg:justify-center lg:items-center">
                         <div class="w-full lg:w-[40vw] h-[40vh] md:h-[35vh] lg:h-[30vh] p-2 bg-darkblue rounded-lg">
                             <iframe class="w-full lg:w-[39vw] h-full rounded-lg"
@@ -78,7 +78,7 @@
                     </svg>
                 </div>
                 <p class="h3-text">2024</p>
-                <p class="h3-text ">Jawahar_V</p>
+                <p class="h3-text">Jawahar_V</p>
             </div>
         </div>
     </div>

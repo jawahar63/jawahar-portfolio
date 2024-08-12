@@ -3,5 +3,5 @@
 }
 
 .inputs {
-    @apply w-full h-[30px] md:h-[40px] lg:h-[50px] px-4 border rounded-md lg:rounded-xl bg-black text-grey font-poppins text-xs md:text-sm border-beach hover:border-lightblue
+    @apply w-full h-[40px] md:h-[40px] lg:h-[50px] px-4 border rounded-md lg:rounded-xl bg-black text-grey font-poppins text-xs md:text-sm border-beach hover:border-lightblue
 }
