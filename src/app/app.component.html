@@ -6,6 +6,7 @@
   <div [ngClass]="{'ml-auto': sideactive, 'ml-[4vw] ': !sideactive}" class="transition-all duration-600 ease-in-out">
     <app-home></app-home>
     <app-skill></app-skill>
+    <app-contact/>
   </div>
   <div *ngIf="!sideactive" class="fixed right-0 top-0">
       <app-rightsidenavbar [ngClass]="{'animate-fadeInRight animate-delay-0': !sideactive}"

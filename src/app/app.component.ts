@@ -7,19 +7,21 @@ import { SkillComponent } from "./pages/skill/skill.component";
 import { AllserviceService } from './services/allservice.service';
 import { CommonModule } from '@angular/common';
 import { RightsidenavbarComponent } from "./components/rightsidenavbar/rightsidenavbar.component";
+import { ContactComponent } from "./pages/contact/contact.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet, 
-    SidenavbarComponent, 
-    SidedetailsComponent, 
-    HomeComponent, 
-    SkillComponent, 
-    CommonModule, 
-    RightsidenavbarComponent
-  ],
+    RouterOutlet,
+    SidenavbarComponent,
+    SidedetailsComponent,
+    HomeComponent,
+    SkillComponent,
+    CommonModule,
+    RightsidenavbarComponent,
+    ContactComponent
+],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

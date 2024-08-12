@@ -1,6 +1,85 @@
-<div
-    class=" h-[100vh] w-[80vw] mr-[0.7rem] lg:mr-[1rem] md:w-[60vW] lg:w-[65vw] xl:w-[74vw] bg-black flex flex-col justify-center items-center">
-    <div
-        class="h-[100vh] w-[80vw] md:h-[90vh] md:w-[60vw] lg:w-[67vw] xl:w-[73vw] bg-darkblue md:rounded-2xl flex items-center justify-center">
-        <div
-            class="h-[100vh] w-[70vw] p-[1vw] md:mt-0 md:h-[85vh] lg:h-[83vh] md:w-[55vw] lg:w-[63vw] xl:w-[70vw] bg-blue md:rounded-2xl flex flex-col justify-center gap-[1vh]">
+<div class="first-bg">
+    <div class="second-bg">
+        <div class="third-bg rounded-b-3xl mb-[0.5vh]">
+            <h2 class="h1-text">Contact</h2>
+            <div class="ps-[6vw] md:ps-[4vw] lg:px-[2vw]">
+                <div>
+                    <p class="h2-text">Leave a message</p>
+                    <p class="h3-text">
+                        Hate forms? Send me an <span class="text-beach underline"><a
+                                href="mailto:d.jawahar6382@gmail.com" class="cursor-pointer">email</a>/<a
+                                href="https://wa.me/917810020911">whatsapp</a></span> instead.
+                    </p>
+                </div>
+                <div>
+                    <form #contactFormElement="ngForm" [formGroup]="contactForm" (ngSubmit)="sendEmail($event)"
+                        class="p-[3vw] pe-[9vw] md:pe-[7vw] lg:p-[2vw] grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <div class="relative flex flex-col space-y-2">
+                            <input type="text" formControlName="user_name" placeholder="Your Name" class="inputs" />
+                            <div *ngIf="contactForm.get('user_name')?.invalid && (contactForm.get('user_name')?.touched)"
+                                class="absolute left-0 bottom-full mb-2 w-max px-2 py-1 text-xs text-grey bg-black bg-opacity-45 rounded-md shadow-lg">
+                                <p *ngIf="contactForm.get('user_name')?.errors?.['required']">Name is required.</p>
+                            </div>
+                        </div>
+                        <div class="relative flex flex-col space-y-2">
+                            <input type="email" formControlName="user_email" placeholder="Your Email" class="inputs" />
+                            <div *ngIf="contactForm.get('user_email')?.invalid && (contactForm.get('user_email')?.touched)"
+                                class="absolute left-0 bottom-full mb-2 w-max px-2 py-1 text-xs text-grey bg-black bg-opacity-45 rounded-md shadow-lg">
+                                <p *ngIf="contactForm.get('user_email')?.errors?.['required']">Email is required.</p>
+                                <p *ngIf="contactForm.get('user_email')?.errors?.['email']">Invalid email format.</p>
+                            </div>
+                        </div>
+                        <div class="relative flex flex-col space-y-2 lg:col-span-1">
+                            <input type="number" formControlName="user_mobile" placeholder="Your Mobile No" class="inputs" />
+                        </div>
+                    
+                        <div class="relative flex flex-col space-y-2 lg:col-span-1">
+                            <textarea formControlName="message" placeholder="Your Message" class="inputs h-[150px] pt-1 md:pt-2 lg:pt-2.5"></textarea>
+                        </div>
+                        <div class="flex justify-center lg:col-span-2">
+                            <button type="submit" [disabled]="contactForm.invalid"
+                                class="w-full lg:w-[300px] px-4 py-2 bg-beach text-center text-black rounded-md hover:bg-black hover:text-beach border border-beach disabled:bg-opacity-90 cursor-pointer transition-all duration-300 ease-in-out"
+                                style="box-shadow: 0 0 10px 2px rgba(255, 204, 0, 0);"
+                                onmouseover="this.style.boxShadow='0 0 10px 2px rgba(255, 204, 0, 0.25)';"
+                                onmouseout="this.style.boxShadow='0 0 10px 2px rgba(255, 204, 0, 0)';">
+                                Send
+                            </button>
+                        </div>
+                    </form>
+
+
+                </div>
+                <div>
+                    <p class="h2-text mt-[1vh] lg:mt-[0.5vh]">Location</p>
+                    <div class="ps-[2vw] pt-[1vh] pe-[8vw] md:pe-[7vw] lg:pe-[4vw] rounded-lg lg:flex lg:justify-center lg:items-center">
+                        <div class="w-full lg:w-[40vw] h-[40vh] md:h-[35vh] lg:h-[30vh] p-2 bg-darkblue rounded-lg">
+                            <iframe class="w-full lg:w-[39vw] h-full rounded-lg"
+                                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3919.235392687715!2d78.52255507769308!3d10.793274961913022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDQ3JzM1LjgiTiA3OMKwMzEnMzguNyJF!5e0!3m2!1sen!2sin!4v1723465745144!5m2!1sen!2sin"
+                                allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="flex justify-center items-center flex-row gap-3 mb-[0.5vh]">
+                <div class="h3-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12" fill="none">
+                        <g clip-path="url(#clip0_135_1922)">
+                            <path
+                                d="M6.5 1C9.26 1 11.5 3.24 11.5 6C11.5 8.76 9.26 11 6.5 11C3.74 11 1.5 8.76 1.5 6C1.5 3.24 3.74 1 6.5 1ZM6.5 2C4.29 2 2.5 3.79 2.5 6C2.5 8.21 4.29 10 6.5 10C8.71 10 10.5 8.21 10.5 6C10.5 3.79 8.71 2 6.5 2ZM6.5 3.5C7.41 3.5 8.2065 3.9865 8.644 4.714L7.787 5.2285C7.65213 5.00362 7.46067 4.81803 7.2317 4.69022C7.00273 4.56242 6.74426 4.49687 6.48206 4.50011C6.21986 4.50336 5.96309 4.57528 5.73735 4.70871C5.51161 4.84214 5.3248 5.03241 5.19554 5.26056C5.06627 5.48871 4.99907 5.74675 5.00064 6.00897C5.00221 6.27119 5.07249 6.52841 5.20447 6.755C5.33646 6.98158 5.52553 7.16961 5.75285 7.30033C5.98017 7.43105 6.23778 7.49989 6.5 7.5C6.75907 7.50017 7.01376 7.43319 7.23923 7.30561C7.4647 7.17802 7.65325 6.99417 7.7865 6.772L8.644 7.286C8.36301 7.75531 7.93582 8.11949 7.42796 8.32267C6.9201 8.52586 6.35961 8.55684 5.83245 8.41086C5.30529 8.26488 4.84057 7.95001 4.50957 7.51452C4.17857 7.07904 3.99956 6.547 4 6C4 4.62 5.12 3.5 6.5 3.5Z"
+                                fill="#E2E2B6" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_135_1922">
+                                <rect width="12" height="12" fill="white" transform="translate(0.5)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+                <p class="h3-text">2024</p>
+                <p class="h3-text ">Jawahar_V</p>
+            </div>
+        </div>
+    </div>
+</div>
