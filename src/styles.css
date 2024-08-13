@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
@@ -51,7 +51,7 @@ body {
 @layer components{
     /*all pages*/
     .first-bg{
-        @apply h-[100vh] w-[80vw] mr-[0.7rem] lg:mr-[1rem] md:w-[60vW] lg:w-[65vw] xl:w-[74vw] bg-black flex flex-col justify-center items-center
+        @apply h-[100vh] w-[80vw] mr-[0.7rem] lg:mr-[0.5rem] md:w-[60vW] lg:w-[65vw] xl:w-[74vw] bg-black flex flex-col justify-center items-center
     }
     .second-bg{
         @apply h-[100vh] w-[80vw] md:h-[90vh] md:w-[60vw] lg:w-[67vw] xl:w-[73vw] bg-darkblue md:rounded-2xl flex items-center justify-center

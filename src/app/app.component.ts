@@ -10,6 +10,7 @@ import { RightsidenavbarComponent } from "./components/rightsidenavbar/rightside
 import { ContactComponent } from "./pages/contact/contact.component";
 import { ProjectComponent } from "./pages/project/project.component";
 import { debounceTime, fromEvent, throttleTime } from 'rxjs';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ import { debounceTime, fromEvent, throttleTime } from 'rxjs';
     CommonModule,
     RightsidenavbarComponent,
     ContactComponent,
-    ProjectComponent
+    ProjectComponent,
+    HttpClientModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
