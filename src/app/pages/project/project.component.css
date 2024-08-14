@@ -1,11 +1,11 @@
 .filter-bg-active{
-    @apply cursor-pointer w-[60px]  md:w-[70px] h-[30px] rounded-full bg-darkblue hover:bg-opacity-20 hover:border-b-0 bg-opacity-40 border-b-2 border-lightblue flex justify-center items-center
+    @apply cursor-pointer w-[50px]  md:w-[80px] h-[30px] rounded-full bg-darkblue hover:bg-opacity-20 hover:border-b-0 bg-opacity-40 border-b-2 border-lightblue flex justify-center items-center
 }
 .filter-text-active{
     @apply h2-text w-full h-full text-center align-middle pt-[6px] md:pt-0
 }
 .filter-bg{
-    @apply cursor-pointer w-[60px] md:w-[70px] h-[30px] rounded-full text-opacity-70 hover:bg-black hover:bg-opacity-35 hover:text-opacity-100 flex justify-center items-center
+    @apply cursor-pointer w-[50px] md:w-[80px] h-[30px] rounded-full text-opacity-70 hover:bg-black hover:bg-opacity-35 hover:text-opacity-100 flex justify-center items-center
 }
 .filter-text{
     @apply h2-text text-grey w-full h-full text-center align-middle pt-[6px] md:pt-0
