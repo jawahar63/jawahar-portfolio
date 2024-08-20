@@ -22,4 +22,20 @@ export class ProjectComponent implements OnInit {
   changefilter(val: string) {
     this.filter=val;
   }
+  get rowsClass() {
+    const projectWindow = document.getElementById('projectWindow');
+    if (projectWindow) {
+      const height = projectWindow.offsetHeight;
+
+      if (height > 660) {
+        return 'grid-rows-3';
+      } else if (height > 430) {
+        return 'grid-rows-2';
+      } else {
+        return 'grid-rows-1';
+      }
+    }
+    return 'grid-rows-1'; // Default case, if the element is not found
+  }
+
 }

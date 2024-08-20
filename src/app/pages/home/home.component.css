@@ -1,0 +1,14 @@
+.text-morphing {
+    opacity: 0;
+    animation: morph 1s ease forwards;
+}
+
+@keyframes morph {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

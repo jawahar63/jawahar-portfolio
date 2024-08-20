@@ -60,7 +60,7 @@ export class AppComponent implements OnInit {
   onWindowScroll() {
     const scrollPosition = window.scrollY || document.documentElement.scrollTop;
     const viewportHeight = window.innerHeight;
-    const threshold = scrollPosition + (viewportHeight * 3) / 4; // 3/4 of the viewport height
+    const threshold = scrollPosition + (viewportHeight * 3) / 5;
     const sections: NodeListOf<HTMLElement> = document.querySelectorAll('.section');
 
     sections.forEach((section: HTMLElement) => {

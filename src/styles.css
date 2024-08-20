@@ -1,9 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+
+    /* styles.css */
+    
+        /* Apply custom scrollbar styles globally */
+    ::-webkit-scrollbar {
+        width: 8px;
+            /* Vertical scrollbar width */
+        height: 8px;
+            /* Horizontal scrollbar height */
+    }
+    
+    ::-webkit-scrollbar-track {
+        background-color: #010C16;
+            /* darkblue for the track */
+        border-radius: 9999px;
+            /* Fully rounded track */
+        margin: 2px;
+            /* Ensures track isn't clipped at the edges */
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background-color: #6EACDA;
+            /* lightblue for the thumb */
+        border-radius: 9999px;
+            /* Fully rounded thumb */
+        border: 2px solid #010C16;
+            /* Add padding around the thumb to keep it smaller */
+    }
+
+    
+    /* html {
+        scrollbar-width: thin;
+        scrollbar-color: #6EACDA #010C16;
+    } */
+
+}
+
 
 .disabled {
     opacity: 0.6;
@@ -51,13 +91,13 @@ body {
 @layer components{
     /*all pages*/
     .first-bg{
-        @apply h-[100vh] w-[80vw] mr-[0.7rem] lg:mr-[0.5rem] md:w-[60vW] lg:w-[65vw] xl:w-[74vw] bg-black flex flex-col justify-center items-center
+        @apply h-[100vh] w-[80vw] mr-[0.7rem] lg:mr-[0.5rem] md:h-full md:w-[60vW] lg:w-[65vw] xl:w-[74vw] bg-darkblue md:bg-black flex flex-col justify-center items-center
     }
     .second-bg{
-        @apply h-[100vh] w-[80vw] md:h-[90vh] md:w-[60vw] lg:w-[67vw] xl:w-[73vw] bg-darkblue md:rounded-2xl flex items-center justify-center
+        @apply h-[100vh] w-[80vw] md:h-full md:w-[60vw] lg:w-[67vw] xl:w-[73vw] bg-darkblue flex items-center justify-center
     }
     .third-bg{
-        @apply h-[100vh] w-[80vw] md:p-[1vw] md:mt-0 md:h-[85vh] lg:h-[85vh] md:w-[55vw] lg:w-[63vw] xl:w-[70vw] bg-blue md:rounded-2xl flex flex-col justify-center gap-[1vh]
+        @apply h-[100vh] w-[80vw] md:p-[1vw] md:py-[5vh] md:h-[100vh] lg:h-[100vh] md:w-[55vw] lg:w-[63vw] xl:w-[70vw] bg-blue flex flex-col justify-center gap-[0.5vh]
     }
     .h1-text{
         @apply w-[80%] text-beach font-poppins tracking-widest ms-[5vw] md:ms-[3vw] lg:ms-[1vw] text-left text-base md:text-2xl

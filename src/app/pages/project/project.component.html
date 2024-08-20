@@ -4,7 +4,7 @@
             <div class="flex flex-col gap-[1vh]">
                 <p class="h1-text">Project</p>
                 <div class="w-full p-[2vw] flex flex-col gap-[1vh]">
-                    <div class="flex flex-row items-center md:gap-[1vw] lg:gap-[20px]">
+                    <div class="w-full flex flex-row items-center md:gap-0 lg:gap-[25px]">
                         <div>
                             <div class="filter-bg-active" *ngIf="filter==='All'">
                                 <p class="filter-text-active">All</p>
@@ -50,8 +50,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-full h-[430px] lg:h-[45vh] p-[10px] bg-darkblue bg-opacity-10 rounded-2xl overflow-x-auto">
-                        <div class="grid grid-flow-col auto-cols-max grid-rows-2 lg:grid-rows-1 gap-[10px]">
+                    <div id="projectWindow" class="w-full h-[70vh] md:h-[65vh] p-[10px] bg-darkblue bg-opacity-10 rounded-2xl overflow-x-auto scrollbar-thin">
+                        <div [ngClass]="rowsClass + ' grid grid-flow-col auto-cols-max gap-[10px]'">
                             <ng-container *ngFor="let data of project">
                                 <ng-container *ngIf="data.category === filter || filter === 'All'">
                                     <div

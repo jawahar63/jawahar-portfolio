@@ -40,6 +40,7 @@ module.exports = {
       },
   },
   plugins: [
+    
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
         {
