@@ -16,7 +16,9 @@ export class ProjectComponent implements OnInit {
   allserve = inject(AllserviceService);
   project: Project[] =[];
   filter:string='All';
+  sectionHeightClass: string = 'h-[100vh]'; 
   ngOnInit(): void {
+    this.checkDimensions();
     this.project = jsonData as Project[];
   }
   changefilter(val: string) {
@@ -37,5 +39,13 @@ export class ProjectComponent implements OnInit {
     }
     return 'grid-rows-1'; // Default case, if the element is not found
   }
+  private checkDimensions() {
+    const height = window.innerHeight;
+    const width = window.innerWidth;
 
+    // Update sectionHeightClass based on height and width, include top margin
+    this.sectionHeightClass = (height > 550) 
+      ? 'h-[100vh]' 
+      : 'h-full';
+  }
 }

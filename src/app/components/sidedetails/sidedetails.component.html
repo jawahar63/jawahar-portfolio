@@ -1,4 +1,4 @@
-<div class="h-[100vh] py-[2vh] md:w-[30vW] lg:w-[25vw] xl:w-[20vw] flex justify-center items-center">
+<div [ngClass]="{'h-[100vh]': isHeightGreaterThan640, 'h-full': !isHeightGreaterThan640}" class="py-[2vh] md:w-[30vW] lg:w-[25vw] xl:w-[20vw] flex justify-center items-center">
     <div class="h-full md:w-[30vw] lg:w-[25vw] bg-darkblue rounded-2xl flex justify-center items-center flex-col gap-[3vh]">
         <div>
             <div class="h-[150px] w-[150px] md:h-[200px] md:w-[200px] xl:h-[20vh] xl:w-[20vh] bg-beach rounded-3xl">

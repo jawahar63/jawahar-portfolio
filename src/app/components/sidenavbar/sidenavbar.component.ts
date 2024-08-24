@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, HostListener, inject, OnInit } from '@angular/core';
 import { AllserviceService } from '../../services/allservice.service';
 
 @Component({
@@ -13,6 +13,7 @@ export class SidenavbarComponent implements OnInit {
   allservice = inject(AllserviceService);
   activeSection: string = 'home'; // Default active section
   active: boolean = true;
+  isTextVisible: boolean = true;
 
   ngOnInit(): void {
     this.active = this.allservice.sidebar;
@@ -20,6 +21,7 @@ export class SidenavbarComponent implements OnInit {
       console.log(val);
       this.activeSection=val;
     })
+    this.checkHeight();
   }
   
 
@@ -30,5 +32,15 @@ export class SidenavbarComponent implements OnInit {
 
   changesidebar() {
     this.allservice.toggle();
+  }
+  @HostListener('window:resize')
+  onResize() {
+    this.checkHeight();
+  }
+  checkHeight() {
+    const sidebar = document.querySelector('.sidebar-content') as HTMLElement;
+    if (sidebar) {
+      this.isTextVisible = sidebar.clientHeight > 550;
+    }
   }
 }

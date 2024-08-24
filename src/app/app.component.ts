@@ -37,11 +37,17 @@ export class AppComponent implements OnInit {
 
   constructor() {
     fromEvent(window, 'scroll')
-      .pipe(throttleTime(150),debounceTime(300))
+      .pipe(throttleTime(150), debounceTime(300))
       .subscribe(() => this.onWindowScroll());
+
+    // Listen to window resize events to check dimensions
+    fromEvent(window, 'resize')
+      .pipe(debounceTime(200)) // Adding debounce to avoid unnecessary calculations
+      .subscribe(() => this.checkDimensions());
   }
 
   ngOnInit(): void {
+    this.checkDimensions(); // Initial check on load
     this.sideactive = this.allservice.sidebar;
     this.allservice.currPage.subscribe((val) => {
       setTimeout(() => {
@@ -75,4 +81,14 @@ export class AppComponent implements OnInit {
       }
     });
   }
+
+  // Method to check window dimensions
+  private checkDimensions() {
+    const height = window.innerHeight;
+    const width = window.innerWidth;
+
+    // Set sideactive based on whether height is less than 3/4 of width
+    this.sideactive = height < (3/4) * width;
+  }
 }
+ 

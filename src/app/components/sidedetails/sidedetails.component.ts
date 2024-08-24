@@ -1,11 +1,11 @@
-import { NgOptimizedImage } from '@angular/common';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-sidedetails',
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [NgOptimizedImage,CommonModule],
   templateUrl: './sidedetails.component.html',
   styleUrl: './sidedetails.component.css'
 })
@@ -17,8 +17,10 @@ export class SidedetailsComponent {
   intervalId: any;
   typingSubscription: Subscription | undefined;
   deleting: boolean = false;
+  isHeightGreaterThan640: boolean = false;
 
   ngOnInit(): void {
+    this.checkHeight();
     this.startTextCycling();
   }
 
@@ -69,5 +71,13 @@ export class SidedetailsComponent {
         }
       }
     });
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.checkHeight();
+  }
+  checkHeight() {
+    this.isHeightGreaterThan640 = window.innerHeight > 640;
   }
 }

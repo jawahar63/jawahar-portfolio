@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit, HostListener } from '@angular/core';
 import emailjs, { type EmailJSResponseStatus } from 'emailjs-com';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { environment } from '../../../environments/environment.development';
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit {
   contactForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
@@ -26,13 +26,11 @@ export class ContactComponent {
   }
 
   public sendEmail(event: Event): void {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
 
     if (this.contactForm.valid) {
-      // Collect form data
       const formData = this.contactForm.value;
       
-      // Prepare email data
       const emailParams = {
         user_name: formData.user_name,
         user_email: formData.user_email,
@@ -41,14 +39,14 @@ export class ContactComponent {
       };
 
       emailjs.send(
-        environment.emailservice,   // Your EmailJS service ID
-        environment.emailtemp,      // Your EmailJS template ID
-        emailParams                 // The email parameters object
+        environment.emailservice,   
+        environment.emailtemp,      
+        emailParams                 
       ).then(
         () => {
           console.log('SUCCESS!');
           alert('Email sent successfully!');
-          this.contactForm.reset(); // Reset the form after submission
+          this.contactForm.reset(); 
         },
         (error) => {
           console.log('FAILED...', (error as EmailJSResponseStatus).text);
@@ -58,5 +56,19 @@ export class ContactComponent {
     } else {
       alert('Please fill out the form correctly.');
     }
+  }
+  isHeightGreaterThan640: boolean = false;
+
+  ngOnInit() {
+    this.checkHeight();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.checkHeight();
+  }
+
+  checkHeight() {
+    this.isHeightGreaterThan640 = window.innerHeight > 640;
   }
 }

@@ -1,10 +1,14 @@
 <div class="flex flex-row bg-darkblue md:bg-black">
   <div *ngIf="sideactive" class="flex flex-row md:mx-[2%] transition-all duration-300 ease-in-out fixed">
-    <app-sidedetails [ngClass]="{'animate-fadeLeft animate-delay-0': sideactive}"
-      class="hidden md:block md:z-10 transition-all duration-300 ease-in-out"></app-sidedetails>
+    <app-sidedetails [ngClass]="{
+        'hidden': !sideactive,
+        'block': sideactive,
+        ' hidden md:block animate-fadeLeft animate-delay-0 transition-all duration-300 ease-in-out': sideactive
+      }" class="md:z-10">
+    </app-sidedetails>
     <app-sidenavbar class="md:ms-[-21px]"></app-sidenavbar>
   </div>
-  <div [ngClass]="{'ml-auto': sideactive, 'ml-[4vw]': !sideactive}" class="transition-all duration-600 ease-in-out ">
+  <div [ngClass]="{'ml-auto': sideactive, 'ml-[4vw]': !sideactive}" class=" transition-all duration-600 ease-in-out ">
 
     <section id="home" class="section">
       <app-home></app-home>

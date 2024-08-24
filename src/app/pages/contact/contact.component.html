@@ -1,4 +1,5 @@
-<div class="first-bg">
+<div [ngClass]="{'h-[100vh]': isHeightGreaterThan640, 'h-full': !isHeightGreaterThan640}"
+    class="first-bg">
     <div class="second-bg rounded-b-3xl md:mb-[2vh]">
         <div class="third-bg rounded-b-3xl md:mb-[3vh]">
             <h2 class="h1-text">Contact</h2>

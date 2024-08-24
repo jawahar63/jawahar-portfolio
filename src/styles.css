@@ -91,13 +91,13 @@ body {
 @layer components{
     /*all pages*/
     .first-bg{
-        @apply h-[100vh] w-[80vw] mr-[0.7rem] lg:mr-[0.5rem] md:h-full md:w-[60vW] lg:w-[65vw] xl:w-[74vw] bg-darkblue md:bg-black flex flex-col justify-center items-center
+        @apply h-full w-[80vw] mr-[0.7rem] lg:mr-[0.5rem] md:w-[60vW] lg:w-[65vw] xl:w-[74vw] bg-darkblue md:bg-black flex flex-col justify-center items-center
     }
     .second-bg{
-        @apply h-[100vh] w-[80vw] md:h-full md:w-[60vw] lg:w-[67vw] xl:w-[73vw] bg-darkblue flex items-center justify-center
+        @apply h-full w-[80vw] md:h-full md:w-[60vw] lg:w-[67vw] xl:w-[73vw] bg-darkblue flex items-center justify-center
     }
     .third-bg{
-        @apply h-[100vh] w-[80vw] md:p-[1vw] md:py-[5vh] md:h-[100vh] lg:h-[100vh] md:w-[55vw] lg:w-[63vw] xl:w-[70vw] bg-blue flex flex-col justify-center gap-[0.5vh]
+        @apply h-full w-[80vw] md:p-[1vw] md:py-[5vh] md:w-[55vw] lg:w-[63vw] xl:w-[70vw] bg-blue flex flex-col justify-center gap-[0.5vh]
     }
     .h1-text{
         @apply w-[80%] text-beach font-poppins tracking-widest ms-[5vw] md:ms-[3vw] lg:ms-[1vw] text-left text-base md:text-2xl

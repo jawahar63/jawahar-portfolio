@@ -1,4 +1,4 @@
-<div class="first-bg ">
+<div [ngClass]="{'h-[100vh]': isHeightGreaterThan640, 'h-full': !isHeightGreaterThan640}" class="first-bg">
     <div class="block md:hidden">
         <div class="flex flex-row gap-[8vw] justify-center items-center mt-[2vh]">
             <div>
@@ -46,11 +46,11 @@
             </div>
         </div>
     </div>
-    <div class="h-[80vh] w-[80vw] mt-[2vh] md:h-[100vh] md:w-[60vw] lg:w-[67vw] xl:w-[73vw] bg-darkblue rounded-t-2xl flex items-center justify-center">
-        <div class="h-[80vh] w-[80vw]  mt-[3vh] md:h-[100vh] lg:h-[100vh] md:w-[55vw] lg:w-[63vw] xl:w-[70vw] bg-blue rounded-t-2xl flex justify-center items-center">
-            <div class="w-full h-[95vh] flex flex-col p-[2vw] justify-center items-center gap-[3vh] lg:gap-[2vh]">
+    <div class="h-full w-[80vw] md:mt-[2vh] md:w-[60vw] lg:w-[67vw] xl:w-[73vw] bg-darkblue rounded-t-2xl flex items-center justify-center">
+        <div class="h-full w-[80vw]  mt-[3vh] md:w-[55vw] lg:w-[63vw] xl:w-[70vw] bg-blue rounded-t-2xl flex justify-center items-center">
+            <div class="w-full h-full flex flex-col p-[2vw] justify-center items-center gap-[3vh] lg:gap-[2vh]">
                 <div class="block md:hidden">
-                    <div class="w-[70vw] py-[1vh] bg-blue rounded-3xl flex flex-col gap-[1vh] justify-center items-center">
+                    <div class="h-full py-[1vh] bg-blue rounded-3xl flex flex-col gap-[1vh] justify-center items-center">
                         <div class="flex flex-col gap-[1vh]">
                             <div
                                 class="w-[60vw] px-4 pb-2 flex flex-row gap-[8vw] justify-start items-center border-b-2 border-lightblue border-opacity-50">
