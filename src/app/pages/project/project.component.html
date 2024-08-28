@@ -53,30 +53,30 @@
                     <div id="projectWindow" class="w-full h-[70vh] md:h-[65vh] p-[10px] bg-darkblue bg-opacity-10 rounded-2xl overflow-x-auto scrollbar-thin">
                         <div [ngClass]="rowsClass + ' grid grid-flow-col auto-cols-max gap-[10px]'">
                             <ng-container *ngFor="let data of project">
-                                <ng-container *ngIf="data.category === filter || filter === 'All'">
+                                <ng-container *ngIf="data.categories.includes(filter) || filter === 'All'">
                                     <div
-                                        class="w-[150px] h-[200px] lg:w-[200px] lg:h-[250px] bg-darkblue p-[10px] lg:p-[13px] rounded-lg lg:rounded-xl flex flex-col gap-[8px] lg:gap-[8px]">
-                                        <div class="w-[130px] h-[80px] lg:h-[120px] lg:w-[180px] rounded-lg lg:rounded-xl">
-                                            <img class="w-full h-full object-cover" [src]="data.image" alt="">
-                                        </div>
+                                        class="w-[150px] h-[200px] md:w-[175px] md:h-[230px] lg:w-[200px] lg:h-[260px] bg-darkblue p-[10px] lg:p-[13px] rounded-lg lg:rounded-xl flex flex-col gap-[8px] lg:gap-[8px]">
+                                        <img class="w-full h-[70px] md:h-[100px] lg:h-[100px] rounded-md object-cover" [src]="data.image" alt="">
                                         <h2 class="h2-text w-full text-center">{{data.title}}</h2>
-                                        <p class="h3-text w-full h-[60px] lg:h-[80px] text-center">{{data.detail}}</p>
+                                        <p class="h3-text w-full h-full text-center">{{data.detail}}</p>
                                         <div class="flex flex-row justify-between items-center">
-                                            <p class="h2-text text-grey h-[20px] text-sm">{{data.category}}</p>
-                                            <div *ngIf="data.category === 'figma'">
-                                                <a (click)="data.url">
-                                                    <img class="w-[20px]" src="../../../assets/figma.png" alt="figma">
-                                                </a>
-                                            </div>
-                                            <div *ngIf="data.category !== 'figma'">
-                                                <a (click)="data.url">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
-                                                        fill="none">
-                                                        <path
-                                                            d="M10.0005 0C4.47522 0 1.64509e-06 4.5883 1.64509e-06 10.2532C-0.00120247 12.4055 0.658633 14.5035 1.88591 16.2497C3.11318 17.9959 4.84557 19.3015 6.83734 19.9814C7.33737 20.0706 7.52538 19.763 7.52538 19.4934C7.52538 19.2504 7.51238 18.4434 7.51238 17.5842C5.00025 18.0589 4.35022 16.9567 4.15021 16.3795C4.0372 16.0842 3.55018 15.1747 3.12516 14.9307C2.77514 14.739 2.27512 14.2642 3.11216 14.2519C3.9002 14.2386 4.46222 14.9953 4.65023 15.3029C5.55028 16.8532 6.98735 16.4174 7.56238 16.1488C7.65038 15.4823 7.9124 15.0343 8.20041 14.7779C5.9753 14.5216 3.65018 13.6367 3.65018 9.7149C3.65018 8.59935 4.0372 7.67759 4.67523 6.95884C4.57523 6.70251 4.22521 5.65156 4.77524 4.24174C4.77524 4.24174 5.61228 3.97311 7.52538 5.29372C8.33948 5.06206 9.18062 4.94547 10.0255 4.94716C10.8755 4.94716 11.7256 5.062 12.5256 5.2927C14.4387 3.95978 15.2758 4.24277 15.2758 4.24277C15.8258 5.65258 15.4758 6.70353 15.3758 6.95986C16.0128 7.67759 16.4008 8.58705 16.4008 9.7149C16.4008 13.6501 14.0637 14.5216 11.8376 14.7779C12.2006 15.0978 12.5136 15.713 12.5136 16.6748C12.5136 18.0456 12.5006 19.1478 12.5006 19.4944C12.5006 19.763 12.6886 20.0829 13.1887 19.9804C15.1736 19.293 16.8984 17.9849 18.1202 16.2399C19.3421 14.495 19.9995 12.4012 20 10.2532C20 4.5883 15.5248 0 9.9995 0H10.0005Z"
-                                                            fill="#6EACDA" />
-                                                    </svg>
-                                                </a>
+                                            <p class="h4-text text-grey h-full">{{data.categories.join(', ').toUpperCase()}}</p>
+                                            <div class="flex flex-row justify-center items-center gap-[10px]">
+                                                <ng-container *ngIf="data.figmaUrl">
+                                                    <a class="cursor-pointer" (click)="openLink(data.figmaUrl)">
+                                                        <img class="w-full h-full" src="../../../assets/figma.png" alt="Figma">
+                                                    </a>
+                                                </ng-container>
+                                                <ng-container *ngIf="data.gitUrl">
+                                                    <a class="cursor-pointer" (click)="openLink(data.gitUrl)">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                                            fill="none">
+                                                            <path
+                                                                d="M10.0005 0C4.47522 0 1.64509e-06 4.5883 1.64509e-06 10.2532C-0.00120247 12.4055 0.658633 14.5035 1.88591 16.2497C3.11318 17.9959 4.84557 19.3015 6.83734 19.9814C7.33737 20.0706 7.52538 19.763 7.52538 19.4934C7.52538 19.2504 7.51238 18.4434 7.51238 17.5842C5.00025 18.0589 4.35022 16.9567 4.15021 16.3795C4.0372 16.0842 3.55018 15.1747 3.12516 14.9307C2.77514 14.739 2.27512 14.2642 3.11216 14.2519C3.9002 14.2386 4.46222 14.9953 4.65023 15.3029C5.55028 16.8532 6.98735 16.4174 7.56238 16.1488C7.65038 15.4823 7.9124 15.0343 8.20041 14.7779C5.9753 14.5216 3.65018 13.6367 3.65018 9.7149C3.65018 8.59935 4.0372 7.67759 4.67523 6.95884C4.57523 6.70251 4.22521 5.65156 4.77524 4.24174C4.77524 4.24174 5.61228 3.97311 7.52538 5.29372C8.33948 5.06206 9.18062 4.94547 10.0255 4.94716C10.8755 4.94716 11.7256 5.062 12.5256 5.2927C14.4387 3.95978 15.2758 4.24277 15.2758 4.24277C15.8258 5.65258 15.4758 6.70353 15.3758 6.95986C16.0128 7.67759 16.4008 8.58705 16.4008 9.7149C16.4008 13.6501 14.0637 14.5216 11.8376 14.7779C12.2006 15.0978 12.5136 15.713 12.5136 16.6748C12.5136 18.0456 12.5006 19.1478 12.5006 19.4944C12.5006 19.763 12.6886 20.0829 13.1887 19.9804C15.1736 19.293 16.8984 17.9849 18.1202 16.2399C19.3421 14.495 19.9995 12.4012 20 10.2532C20 4.5883 15.5248 0 9.9995 0H10.0005Z"
+                                                                fill="#6EACDA" />
+                                                        </svg>
+                                                    </a>
+                                                </ng-container>
                                             </div>
                                         </div>
                                     </div>

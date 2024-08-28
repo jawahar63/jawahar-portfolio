@@ -3,6 +3,7 @@ export class Project {
   image!: string;
   title!: string;
   detail!: string;
-  category!: string;
-  url!: string;
+  categories!: string[];
+  figmaUrl?:string;
+  gitUrl!: string;
 }

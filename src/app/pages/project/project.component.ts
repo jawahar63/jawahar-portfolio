@@ -48,4 +48,7 @@ export class ProjectComponent implements OnInit {
       ? 'h-[100vh]' 
       : 'h-full';
   }
+  openLink(url: string): void {
+    window.open(url, '_blank');
+}
 }

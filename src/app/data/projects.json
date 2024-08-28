@@ -2,58 +2,37 @@
 [
     {
         "id":1,
-        "image":"../../assets/blender.png",
-        "title":"title",
-        "detail":"detail",
-        "category":"figma",
-        "url":"jawahar.v"
+        "image":"../../assets/Alumni-net-Ui.png",
+        "title":"Alumni Net",
+        "detail":"It is a website designed for a college, focusing on fostering communication between students and alumni.MEAN",
+        "categories":["figma","web"],
+        "figmaUrl":"https://www.figma.com/design/1KO5feQ1PpBSzw6IrSkn9A/Alumini?node-id=0-1&t=Mq7KLKYWkZaADrfT-1",
+        "gitUrl":"https://github.com/jawahar63/Alumni-link"
     },
     {
-        "id":1,
-        "image":"../../assets/blender.png",
-        "title":"title",
-        "detail":"detail",
-        "category":"web",
-        "url":"jawahar.v"
+        "id":2,
+        "image":"../../assets/Portfolio-Ui.png",
+        "title":"Portfolio",
+        "detail":"My personal portfolio, designed to showcase my skills, projects, and professional journey.Angular",
+        "categories":["figma","web"],
+        "figmaUrl":"https://www.figma.com/design/5n78usfZfajmbJtRFSkqtd/portfoilo?node-id=0-1&t=CgP9UGYpRe2z3li7-1",
+        "gitUrl":"https://github.com/jawahar63/jawahar-portfolio"
     },
     {
-        "id":1,
-        "image":"../../assets/blender.png",
-        "title":"title",
-        "detail":"detail",
-        "category":"flutter",
-        "url":"jawahar.v"
+        "id":3,
+        "image":"../../assets/BlenderRender-UI.png",
+        "title":"RenderCal",
+        "detail":"RenderCal is an app UI designed to calculate the render time of a Blender scene.",
+        "categories":["figma","flutter"],
+        "figmaUrl":"https://www.figma.com/design/dZEWZHPdhY34RGQYAZbjVS/Blenderclaculator?node-id=0-1&t=NjqHhPxz3sRz39yn-1",
+        "gitUrl":"https://github.com/jawahar63/blendercalculator"
     },
     {
-        "id":1,
-        "image":"../../assets/blender.png",
-        "title":"title",
-        "detail":"detail",
-        "category":"web",
-        "url":"jawahar.v"
-    },
-    {
-        "id":1,
-        "image":"../../assets/blender.png",
-        "title":"title",
-        "detail":"detail",
-        "category":"figma",
-        "url":"jawahar.v"
-    },
-    {
-        "id":1,
-        "image":"../../assets/blender.png",
-        "title":"title",
-        "detail":"detail",
-        "category":"web",
-        "url":"jawahar.v"
-    },
-    {
-        "id":1,
-        "image":"../../assets/blender.png",
-        "title":"title",
-        "detail":"detail",
-        "category":"figma",
-        "url":"jawahar.v"
+        "id":4,
+        "image":"../../assets/Ai_maniacs.png",
+        "title":"AI Career Guidance",
+        "detail":"AI Career Guidance provides recommendations for students on career paths by utilizing machine learning models",
+        "categories":["ai","web"],
+        "gitUrl":"https://github.com/jawahar63/AI_Maniacs"
     }
 ]
