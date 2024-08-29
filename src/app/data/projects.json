@@ -34,5 +34,13 @@
         "detail":"AI Career Guidance provides recommendations for students on career paths by utilizing machine learning models",
         "categories":["ai","web"],
         "gitUrl":"https://github.com/jawahar63/AI_Maniacs"
+    },
+    {
+        "id":5,
+        "image":"../../assets/Ai_maniacs.png",
+        "title":"Intelligate",
+        "detail":"Intelligate is a day-scholar recognition system designed to efficiently manage and prevent entry inside Hostal.",
+        "categories":["ai","web"],
+        "gitUrl":"https://github.com/Ragulram004/Intelligate_Dayscholar_Recognition_System"
     }
 ]

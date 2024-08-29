@@ -51,4 +51,5 @@ export class ProjectComponent implements OnInit {
   openLink(url: string): void {
     window.open(url, '_blank');
 }
+
 }

@@ -4,7 +4,7 @@
             <div class="flex flex-col gap-[1vh]">
                 <p class="h1-text">Project</p>
                 <div class="w-full p-[2vw] flex flex-col gap-[1vh]">
-                    <div class="w-full flex flex-row items-center md:gap-0 lg:gap-[25px]">
+                    <div class="w-full flex flex-row items-center justify-evenly">
                         <div>
                             <div class="filter-bg-active" *ngIf="filter==='All'">
                                 <p class="filter-text-active">All</p>
@@ -50,15 +50,15 @@
                             </div>
                         </div>
                     </div>
-                    <div id="projectWindow" class="w-full h-[70vh] md:h-[65vh] p-[10px] bg-darkblue bg-opacity-10 rounded-2xl overflow-x-auto scrollbar-thin">
+                    <div id="projectWindow" class="card-animation w-full h-[70vh] md:h-[65vh] p-[10px] bg-darkblue bg-opacity-10 rounded-2xl overflow-x-auto scrollbar-thin">
                         <div [ngClass]="rowsClass + ' grid grid-flow-col auto-cols-max gap-[10px]'">
-                            <ng-container *ngFor="let data of project">
+                            <ng-container *ngFor="let data of project" >
                                 <ng-container *ngIf="data.categories.includes(filter) || filter === 'All'">
                                     <div
-                                        class="w-[150px] h-[200px] md:w-[175px] md:h-[230px] lg:w-[200px] lg:h-[260px] bg-darkblue p-[10px] lg:p-[13px] rounded-lg lg:rounded-xl flex flex-col gap-[8px] lg:gap-[8px]">
-                                        <img class="w-full h-[70px] md:h-[100px] lg:h-[100px] rounded-md object-cover" [src]="data.image" alt="">
+                                        class="w-[200px] h-[258px] bg-darkblue p-[10px] lg:p-[13px] rounded-lg lg:rounded-xl flex flex-col gap-[8px]">
+                                        <img class="w-full h-[100px] rounded-md object-cover" [src]="data.image" alt="">
                                         <h2 class="h2-text w-full text-center">{{data.title}}</h2>
-                                        <p class="h3-text w-full h-full text-center">{{data.detail}}</p>
+                                        <p class="h3-text w-full h-full text-center ">{{data.detail}}</p>
                                         <div class="flex flex-row justify-between items-center">
                                             <p class="h4-text text-grey h-full">{{data.categories.join(', ').toUpperCase()}}</p>
                                             <div class="flex flex-row justify-center items-center gap-[10px]">
@@ -87,20 +87,25 @@
                 </div>
                 <p class="h3-text ps-[2vw]">For 3D project check out my pages</p>
                 <div class="ps-[2vw] w-full flex flex-row gap-[1vw] justify-center items-center">
+                    <a href="https://www.youtube.com/@cgboyfx7617">
                     <div class="w-[50px] h-full lg:w-[200px] lg:rounded-xl p-[10px] bg-darkblue rounded-md flex flex-row gap-2 justify-center items-center">
                         <img src="../../../assets/yt.png" alt="YT">
                         <p class="hidden lg:block h2-text text-center">Youtube</p>
                     </div>
-                    <div
+                    </a>
+                    <a href="https://instagram.com/_u/jawahar___v_"><div
                         class="w-[50px] h-full lg:w-[200px] lg:rounded-xl p-[10px] bg-darkblue rounded-md flex flex-row gap-2 justify-center items-center">
                         <img src="../../../assets/instagram.png" alt="instagram">
                         <p class="hidden lg:block h2-text text-center">Instagram</p>
                     </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jawahar-varatharajan/">
                     <div
                         class="w-[50px] h-full lg:w-[200px] lg:rounded-xl p-[10px] bg-darkblue rounded-md flex flex-row gap-2 justify-center items-center">
                         <img src="../../../assets/linkedin.png" alt="linkedin">
                         <p class="hidden lg:block h2-text text-center">linkedin</p>
                     </div>
+                    </a>
                 </div>
             </div>
         </div>

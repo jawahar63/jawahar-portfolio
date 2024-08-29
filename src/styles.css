@@ -106,7 +106,7 @@ body {
         @apply w-full font-poppins text-start font-normal text-beach text-xs md:text-base lg:text-base tracking-wider
     }
     .h3-text{
-        @apply text-grey mt-[1vh] text-[8px] lg:text-xs font-raleway font-normal
+        @apply text-grey mt-[1vh] text-[10px] lg:text-xs font-raleway font-normal
     }
     .h4-text {
         @apply w-full font-poppins text-start font-normal text-beach text-[10px] md:text-xs tracking-wider
