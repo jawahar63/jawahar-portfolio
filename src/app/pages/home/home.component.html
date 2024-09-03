@@ -10,9 +10,11 @@
             <div class="w-[30vw] flex flex-col gap-[0.5vh]">
                 <h4 class="text-grey text-center font-poppins text-sm font-semibold">V JAWAHAR</h4>
                 <h5 class="text-grey text-center font-raleway text-xs font-medium">B.Tech AI&DS</h5>
-                <h5 [ngClass]="{ 'text-morphing': morphing }" class="text-grey text-center font-raleway text-xs font-medium">
+                <h5 [ngClass]="{ 'text-blur': morphing, 'text-unblur': !morphing }"
+                    class="text-grey text-center font-raleway text-sm font-medium">
                     {{ texts[currentIndex] }}
                 </h5>
+
                 <!-- <h5 class="text-grey text-center font-raleway text-xs font-medium">{{currentText}} <span class="blinking-cursor text-xl text-beach">|</span></h5> -->
                 <div class="flex flex-row justify-center items-center gap-[5vw]">
                     <a href="https://instagram.com/_u/jawahar___v_">
@@ -99,14 +101,14 @@
                         </div>
                         <a href="../../../assets/c.png" download="Jawahar_V-CV">
                             <div
-                                class="w-[50vw] h-[5vh] bg-beach rounded-full flex flex-row gap-2 justify-center items-center cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105 hover:bg-lightblue">
+                                class="w-[50vw] h-[5vh] text-black bg-beach rounded-full flex flex-row gap-2 justify-center items-center cursor-pointer transition-all duration-300 ease-in-out hover:bg-black border-2 border-blue hover:border-beach hover:text-beach">
                                 <h3
-                                    class="text-center text-black font-raleway text-xs font-medium transition-colors duration-300 ease-in-out hover:text-darkblue">
+                                    class="text-center font-raleway text-xs font-medium transition-colors duration-300 ease-in-out ">
                                     Download CV</h3>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="currentColor">
                                     <path
                                         d="M7.5 10.0185L4.375 6.89352L5.25 5.98727L6.875 7.61227V2.51852H8.125V7.61227L9.75 5.98727L10.625 6.89352L7.5 10.0185ZM3.75 12.5185C3.40625 12.5185 3.11188 12.396 2.86688 12.151C2.62188 11.906 2.49958 11.6119 2.5 11.2685V9.39352H3.75V11.2685H11.25V9.39352H12.5V11.2685C12.5 11.6123 12.3775 11.9066 12.1325 12.1516C11.8875 12.3966 11.5933 12.5189 11.25 12.5185H3.75Z"
-                                        fill="#010C16" />
+                                        />
                                 </svg>
                             </div>
                         </a>

@@ -1,14 +1,27 @@
-.text-morphing {
-    opacity: 0;
-    animation: morph 1s ease forwards;
-}
-
-@keyframes morph {
+@keyframes blur {
     0% {
-        opacity: 1;
+        filter: blur(0);
     }
 
     100% {
-        opacity: 0;
+        filter: blur(10px);
     }
+}
+
+@keyframes unblur {
+    0% {
+        filter: blur(10px);
+    }
+
+    100% {
+        filter: blur(0);
+    }
+}
+
+.text-blur {
+    animation: blur 1s forwards;
+}
+
+.text-unblur {
+    animation: unblur 1s forwards;
 }

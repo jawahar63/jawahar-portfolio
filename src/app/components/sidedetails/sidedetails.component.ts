@@ -19,6 +19,7 @@ export class SidedetailsComponent {
   typingSubscription: Subscription | undefined;
   deleting: boolean = false;
   isHeightGreaterThan640: boolean = false;
+  
 
   ngOnInit(): void {
     this.checkHeight();
