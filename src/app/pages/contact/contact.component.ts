@@ -1,8 +1,9 @@
 import { Component, ViewChild, ElementRef, OnInit, HostListener } from '@angular/core';
 import emailjs, { type EmailJSResponseStatus } from 'emailjs-com';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { environment } from '../../../environments/environment.development';
+import {environment} from "../../../../srcenvironmentsenvironment.development"
 import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-contact',
