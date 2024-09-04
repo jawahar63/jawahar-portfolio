@@ -36,6 +36,7 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+.env
 
 # Ignore environment files
 src/environments/*.ts
