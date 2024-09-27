@@ -18,7 +18,6 @@ export class SidenavbarComponent implements OnInit {
   ngOnInit(): void {
     this.active = this.allservice.sidebar;
     this.allservice.currPage.subscribe((val:string)=>{
-      console.log(val);
       this.activeSection=val;
     })
     this.checkHeight();
