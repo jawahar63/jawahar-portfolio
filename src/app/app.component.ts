@@ -31,7 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'portfolio';
+  title = 'V Jawahar';
   allservice = inject(AllserviceService);
   sideactive: boolean = true;
 
