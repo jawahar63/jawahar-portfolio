@@ -37,7 +37,7 @@
     },
     {
         "id":5,
-        "image":"../../assets/Ai_maniacs.png",
+        "image":"../../assets/INTELLIGATE.jpg",
         "title":"Intelligate",
         "detail":"Intelligate is a day-scholar recognition system designed to efficiently manage and prevent entry inside Hostal.",
         "categories":["ai","web"],
