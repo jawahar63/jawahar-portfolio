@@ -1,5 +1,5 @@
 export const environment = {
-    emailservice: 'undefined',
-    emailtemp: 'undefined',
-    pubkey: 'undefined',
+    emailservice: '',
+    emailtemp: '',
+    pubkey: '',
 };
