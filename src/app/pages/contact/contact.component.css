@@ -5,3 +5,35 @@
 .inputs {
     @apply w-full h-[40px] md:h-[40px] lg:h-[50px] px-4 border rounded-md lg:rounded-xl bg-black text-grey font-poppins text-xs md:text-sm border-beach hover:border-lightblue
 }
+
+@keyframes slideInMobile {
+  from {
+    transform: translate(-50%, 50px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDesktop {
+  from {
+    transform: translate(100px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.toast-container {
+  animation: slideInMobile 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (min-width: 768px) {
+  .toast-container {
+    animation: slideInDesktop 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}

@@ -85,4 +85,31 @@
             </div>
         </div>
     </div>
-</div>
+  </div>
+
+  <!-- Custom Toast Notification -->
+  <div *ngIf="showToast" 
+       class="fixed bottom-5 left-1/2 md:left-auto md:right-5 transform -translate-x-1/2 md:translate-x-0 z-50 flex items-center p-4 rounded-xl border shadow-2xl transition-all duration-300 ease-in-out toast-container"
+       [ngClass]="{
+         'bg-[#010C16] border-[#6EACDA] text-[#E2E2B6]': toastType === 'success',
+         'bg-[#1A0303] border-[#FF5A5A] text-[#FF8A8A]': toastType === 'error'
+       }">
+    <div class="flex items-center space-x-3">
+      <!-- Success Icon -->
+      <div *ngIf="toastType === 'success'" class="w-8 h-8 rounded-full bg-[#6EACDA] bg-opacity-20 flex justify-center items-center text-[#6EACDA]">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+      <!-- Error Icon -->
+      <div *ngIf="toastType === 'error'" class="w-8 h-8 rounded-full bg-[#FF5A5A] bg-opacity-20 flex justify-center items-center text-[#FF5A5A]">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </div>
+      <!-- Message Content -->
+      <div>
+        <p class="font-poppins font-medium text-xs md:text-sm tracking-wide">{{ toastMessage }}</p>
+      </div>
+    </div>
+  </div>

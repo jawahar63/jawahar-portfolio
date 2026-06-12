@@ -12,6 +12,9 @@ import { CommonModule } from '@angular/common';
 })
 export class ContactComponent implements OnInit {
   contactForm: FormGroup;
+  showToast: boolean = false;
+  toastMessage: string = '';
+  toastType: 'success' | 'error' = 'success';
 
   constructor(private formBuilder: FormBuilder) {
     this.contactForm = this.formBuilder.group({
@@ -20,6 +23,15 @@ export class ContactComponent implements OnInit {
       user_mobile: [''],
       message: ['', Validators.required]
     });
+  }
+
+  private showNotification(message: string, type: 'success' | 'error' = 'success'): void {
+    this.toastMessage = message;
+    this.toastType = type;
+    this.showToast = true;
+    setTimeout(() => {
+      this.showToast = false;
+    }, 4000);
   }
 
   public sendEmail(event: Event): void {
@@ -45,20 +57,20 @@ export class ContactComponent implements OnInit {
       .then(async (response) => {
         if (response.ok) {
           console.log('SUCCESS!');
-          alert('Email sent successfully!');
+          this.showNotification('Email sent successfully!', 'success');
           this.contactForm.reset(); 
         } else {
           const errData = await response.json().catch(() => ({}));
           console.log('FAILED...', errData.error || response.statusText);
-          alert('Failed to send email. Please try again.');
+          this.showNotification(errData.error || 'Failed to send email. Please try again.', 'error');
         }
       })
       .catch((error) => {
         console.log('FAILED...', error);
-        alert('Failed to send email. Please try again.');
+        this.showNotification('Failed to send email. Please try again.', 'error');
       });
     } else {
-      alert('Please fill out the form correctly.');
+      this.showNotification('Please fill out the form correctly.', 'error');
     }
   }
   isHeightGreaterThan640: boolean = false;
