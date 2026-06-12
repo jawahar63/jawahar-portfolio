@@ -26,7 +26,7 @@ module.exports = async (req, res) => {
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
-    const payload = JSON.stringify({
+    const payloadObj = {
       service_id: process.env.emailservice,
       template_id: process.env.emailtemp,
       user_id: process.env.pubkey,
@@ -36,7 +36,13 @@ module.exports = async (req, res) => {
         user_mobile: user_mobile || '',
         message
       }
-    });
+    };
+
+    if (process.env.email_access_token) {
+      payloadObj.accessToken = process.env.email_access_token;
+    }
+
+    const payload = JSON.stringify(payloadObj);
 
     const options = {
       hostname: 'api.emailjs.com',

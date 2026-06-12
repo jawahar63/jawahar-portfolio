@@ -50,7 +50,7 @@ const server = http.createServer((req, res) => {
           return;
         }
 
-        const payload = JSON.stringify({
+        const payloadObj = {
           service_id: process.env.emailservice,
           template_id: process.env.emailtemp,
           user_id: process.env.pubkey,
@@ -60,7 +60,13 @@ const server = http.createServer((req, res) => {
             user_mobile: user_mobile || '',
             message
           }
-        });
+        };
+
+        if (process.env.email_access_token) {
+          payloadObj.accessToken = process.env.email_access_token;
+        }
+
+        const payload = JSON.stringify(payloadObj);
 
         const options = {
           hostname: 'api.emailjs.com',
