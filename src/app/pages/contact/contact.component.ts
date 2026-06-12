@@ -1,7 +1,5 @@
 import { Component, ViewChild, ElementRef, OnInit, HostListener } from '@angular/core';
-import emailjs, { type EmailJSResponseStatus } from 'emailjs-com';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import {environment} from "../../../../srcenvironmentsenvironment.development"
 import { CommonModule } from '@angular/common';
 
 
@@ -16,8 +14,6 @@ export class ContactComponent implements OnInit {
   contactForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
-    emailjs.init(environment.pubkey);
-
     this.contactForm = this.formBuilder.group({
       user_name: ['', Validators.required],
       user_email: ['', [Validators.required, Validators.email]],
@@ -39,21 +35,28 @@ export class ContactComponent implements OnInit {
         message: formData.message
       };
 
-      emailjs.send(
-        environment.emailservice,   
-        environment.emailtemp,      
-        emailParams                 
-      ).then(
-        () => {
+      fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(emailParams)
+      })
+      .then(async (response) => {
+        if (response.ok) {
           console.log('SUCCESS!');
           alert('Email sent successfully!');
           this.contactForm.reset(); 
-        },
-        (error) => {
-          console.log('FAILED...', (error as EmailJSResponseStatus).text);
+        } else {
+          const errData = await response.json().catch(() => ({}));
+          console.log('FAILED...', errData.error || response.statusText);
           alert('Failed to send email. Please try again.');
         }
-      );
+      })
+      .catch((error) => {
+        console.log('FAILED...', error);
+        alert('Failed to send email. Please try again.');
+      });
     } else {
       alert('Please fill out the form correctly.');
     }
